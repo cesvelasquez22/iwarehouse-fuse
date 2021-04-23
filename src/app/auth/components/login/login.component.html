@@ -1,0 +1,55 @@
+<!-- <app-loading-overlay [isActive]="loading"></app-loading-overlay> -->
+<div id="login" fxLayout="column">
+
+    <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="login-form">
+
+            <div class="logo">
+                <img src="assets/images/logos/fuse.svg">
+            </div>
+
+            <div class="title">Inicia tu sesión</div>
+
+            <form name="loginForm" [formGroup]="loginForm">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+                    <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                        El correo electrónico es requerido
+                    </mat-error>
+                    <mat-error
+                        *ngIf="!loginForm.get('email').hasError('required') &&
+                                loginForm.get('email').hasError('email')">
+                        Por favor ingrese un correo válido
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" formControlName="password">
+                    <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+                    <mat-error>
+                        La contraseña es requerida
+                    </mat-error>
+                </mat-form-field>
+
+                <button mat-raised-button color="accent" class="submit-button" aria-label="Iniciar sesión" (click)="login()"
+                        [disabled]="loginForm.invalid">
+                    Iniciar sesión
+                </button>
+
+            </form>
+
+            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                <span class="text">¿Aún no tiene cuenta?</span>
+                <a class="link" routerLink="/auth/signup">Crea tu cuenta</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

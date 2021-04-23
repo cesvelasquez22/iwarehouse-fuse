@@ -1,0 +1,19 @@
+<mat-card class="mat-elevation-z8">
+    <mat-card-header>
+        <div mat-card-avatar class="avatar-icon">
+            <mat-icon>list_alt</mat-icon>
+        </div>
+        <mat-card-title>{{ moduleCard.module }}</mat-card-title>
+        <mat-card-subtitle>{{ moduleCard.group }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="moduleCard.image" alt="Module image" />
+    <mat-card-actions fxLayout="row" fxLayoutAlign="end center">
+        <button
+            mat-raised-button
+            color="primary"
+            [routerLink]="moduleCard.route"
+        >
+            Listado
+        </button>
+    </mat-card-actions>
+</mat-card>

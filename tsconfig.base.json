@@ -21,11 +21,17 @@
         "paths": {
             "@fuse": [
                 "@fuse/"
+            ],
+            "@core/*": [
+                "app/core/*"
+            ],
+            "@shared/*": [
+                "app/shared/*"
             ]
         }
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": false,
-        "strictInjectionParameters": false
+        "strictInjectionParameters": true
     }
 }

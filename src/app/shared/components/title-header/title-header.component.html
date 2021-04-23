@@ -1,0 +1,71 @@
+<!-- <div fxLayout="column">
+    <div class="header {{color}} p-20 h-80" fxLayoutAlign="start center">
+        <div fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="secondary-text s-18">{{icon}}</mat-icon>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text span-padding">{{section | titlecase}}</span>
+            </div>
+            <div class="h1 m-0">{{title}}</div>
+        </div>
+    </div>    
+</div> -->
+<!-- HEADER -->
+<div
+    class="header {{ color }} p-16 p-sm-24"
+    fxLayout="column"
+    fxLayoutAlign="start"
+    fxLayout.gt-xs="row"
+    fxLayoutAlign.gt-xs="space-between center"
+>
+    <!-- Back to button -->
+    <!-- <div fxLayout="row" fxLayoutAlign="start start" *ngIf="search">
+        <div fxLayout="row" fxLayoutAlign="start center" class="mt-12">
+            <button
+                mat-button
+                #tooltip="matTooltip"
+                matTooltip="Regresar"
+                matTooltipPosition="below"
+                class="accent"
+                routerLink=".."
+            >
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+    </div> -->
+    <!-- APP TITLE -->
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="secondary-text s-18">{{ icon }}</mat-icon>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text span-padding">{{
+                    section | titlecase
+                }}</span>
+            </div>
+            <div class="h1 m-0">{{ title }}</div>
+        </div>
+    </div>
+    <!-- / END APP TITLE -->
+
+    <!-- SEARCH -->
+    <div
+        *ngIf="search"
+        style="padding-left: 14%"
+        fxLayout="row"
+        fxLayoutAlign="start center"
+        fxFlex
+    >
+        <div class="search-wrapper mt-16 mt-sm-0">
+            <div
+                class="search"
+                fxFlex
+                fxLayout="row"
+                fxLayoutAlign="start center"
+            >
+                <mat-icon style="color: rgb(118, 118, 118)">search</mat-icon>
+                <input [formControl]="searchInput" placeholder="Busqueda" />
+            </div>
+        </div>
+    </div>
+</div>

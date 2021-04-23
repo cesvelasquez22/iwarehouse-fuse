@@ -1,0 +1,18 @@
+<div
+    class="page-layout simple fullwidth"
+    fxLayout="column"
+>
+    <app-title-header
+        [icon]="'assistant'"
+        [section]="'Accesos directos'"
+        [title]="'Inventario'"
+    ></app-title-header>
+
+    <div fxLayout="row" fxLayout.xs="column" fxFlex="100">
+        <div fxLayout="row" fxFlex="100" class="m-36">
+            <div fxLayout="column" fxFlex="25" class="mx-12" *ngFor="let card of moduleCards">
+                <app-module-card [moduleCard]="card"></app-module-card>
+            </div>
+        </div>
+    </div>
+</div>
